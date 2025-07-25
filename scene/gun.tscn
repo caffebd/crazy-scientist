@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuwg5wvct5x4u"]
+
+[ext_resource type="Texture2D" uid="uid://4w54c4wvbh3s" path="res://assets/player(swat)/gun/gun.png" id="1_hc6fn"]
+
+[node name="gun" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(19.75, 7)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_hc6fn")
