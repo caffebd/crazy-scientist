@@ -1,11 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://cuwg5wvct5x4u"]
+[gd_scene load_steps=7 format=3 uid="uid://cuwg5wvct5x4u"]
 
 [ext_resource type="Texture2D" uid="uid://4w54c4wvbh3s" path="res://assets/player(swat)/gun/gun.png" id="1_hc6fn"]
+[ext_resource type="Script" path="res://script/gun.gd" id="1_oo783"]
+[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://assets/KGBlankSpaceSolid.ttf" id="3_rjhr3"]
+[ext_resource type="Script" path="res://script/message.gd" id="4_fkqd6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_02jtf"]
+size = Vector2(62.9167, 16.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1tb2"]
+size = Vector2(137, 16)
 
 [node name="gun" type="Node2D"]
+script = ExtResource("1_oo783")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(19.75, 7)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_hc6fn")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(6, 4)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.33333, 0)
+shape = SubResource("RectangleShape2D_02jtf")
+
+[node name="label" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = -67.0
+offset_top = -39.0
+offset_right = 91.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("3_rjhr3")
+text = "Press F to Pick Up"
+script = ExtResource("4_fkqd6")
+
+[node name="Area2D2" type="Area2D" parent="label"]
+position = Vector2(69, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="label/Area2D2"]
+position = Vector2(9.5, -2)
+shape = SubResource("RectangleShape2D_l1tb2")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="label/Area2D2" to="label" method="_on_area_2d_2_body_entered"]

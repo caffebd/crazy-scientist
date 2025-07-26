@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tt5tr0ai60u"
-path="res://.godot/imported/image.png-7a7bd711b5b4054e846c70397f9ba855.ctex"
+uid="uid://dhucloddo3qli"
+path="res://.godot/imported/swat_idle_4.png-2d6adc87f8804f970fc94111cf45a599.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/image.png"
-dest_files=["res://.godot/imported/image.png-7a7bd711b5b4054e846c70397f9ba855.ctex"]
+source_file="res://assets/player(swat)/idle_2/swat_idle_4.png"
+dest_files=["res://.godot/imported/swat_idle_4.png-2d6adc87f8804f970fc94111cf45a599.ctex"]
 
 [params]
 

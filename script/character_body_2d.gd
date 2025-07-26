@@ -67,7 +67,9 @@ func _physics_process(delta) -> void:
 	
 func _input(evemt : InputEvent) -> void:
 	if Input.is_action_just_pressed("attack"):
+		# if can_shoot is true add animation, increse damage, player speed*2 
 		var bullet = bullet_scene.instantiate()
 		bullet.global_position = $Marker2D.global_position
 		get_parent().add_child(bullet)
 		bullet.shoot(sprite_2d.flip_h)
+	

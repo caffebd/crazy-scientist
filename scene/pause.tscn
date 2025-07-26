@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddb5q3nw0bspx"]
+
+[ext_resource type="Script" path="res://script/node.gd" id="1_1o50e"]
+[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://assets/KGBlankSpaceSolid.ttf" id="2_71b7j"]
+
+[node name="pause" type="Node"]
+script = ExtResource("1_1o50e")
+
+[node name="pause_panel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 171.0
+offset_right = 13.0
+offset_bottom = 171.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="pause_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.5
+offset_top = -27.0
+offset_right = 147.5
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_71b7j")
+theme_override_font_sizes/font_size = 40
+text = "Game Paused"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = 49.0
+offset_right = 157.0
+offset_bottom = 227.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+
+[node name="resume" type="Button" parent="pause_panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_71b7j")
+theme_override_font_sizes/font_size = 33
+text = "Resume"
+
+[node name="restart" type="Button" parent="pause_panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_71b7j")
+theme_override_font_sizes/font_size = 33
+text = "Restart"
+
+[node name="quit" type="Button" parent="pause_panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_71b7j")
+theme_override_font_sizes/font_size = 33
+text = "Quit
+"
+
+[connection signal="pressed" from="pause_panel/VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="pause_panel/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="pause_panel/VBoxContainer/quit" to="." method="_on_quit_pressed"]
