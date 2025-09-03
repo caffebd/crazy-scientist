@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://7v7jqwfoalo5" path="res://assets/game_background/platform3.png" id="3_82o3j"]
 [ext_resource type="PackedScene" uid="uid://djetud6p1640n" path="res://scene/character_body_2d.tscn" id="3_hxt4h"]
 [ext_resource type="PackedScene" uid="uid://d4iv7sfi1usv4" path="res://scene/drone.tscn" id="4_2d51x"]
-[ext_resource type="Script" path="res://script/kill_zone.gd" id="5_rmcas"]
+[ext_resource type="Script" uid="uid://b3x1i0gbosv4y" path="res://script/kill_zone.gd" id="5_rmcas"]
 [ext_resource type="PackedScene" uid="uid://cuwg5wvct5x4u" path="res://scene/gun.tscn" id="7_p8to3"]
-[ext_resource type="Script" path="res://script/bounds.gd" id="8_4gh1u"]
+[ext_resource type="Script" uid="uid://cnte8kq8sup4p" path="res://script/bounds.gd" id="8_4gh1u"]
 [ext_resource type="PackedScene" uid="uid://ddb5q3nw0bspx" path="res://scene/pause.tscn" id="9_mtffo"]
 [ext_resource type="PackedScene" uid="uid://b6bv20sypn4u0" path="res://scene/enemy.tscn" id="10_l2ypt"]
 
