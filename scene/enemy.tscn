@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6bv20sypn4u0"]
+
+[ext_resource type="Script" path="res://script/enemy.gd" id="1_a2b4k"]
+[ext_resource type="Texture2D" uid="uid://diay45nyh3x3a" path="res://assets/scientist.png" id="1_y8gf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwyc0"]
+size = Vector2(41, 84)
+
+[node name="enemy" type="Area2D" groups=["enemies"]]
+collision_layer = 2
+collision_mask = 25
+script = ExtResource("1_a2b4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2.77, 2.77)
+texture = ExtResource("1_y8gf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -1)
+shape = SubResource("RectangleShape2D_dwyc0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -110,7 +110,8 @@ animations = [{
 radius = 42.0
 height = 110.0
 
-[node name="player" type="CharacterBody2D" groups=["finish line", "player"]]
+[node name="player" type="CharacterBody2D" groups=["player"]]
+collision_mask = 14
 script = ExtResource("1_mcjlm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -129,4 +130,4 @@ shape = SubResource("CapsuleShape2D_noqt3")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(39, 24)
+position = Vector2(39, -15)
