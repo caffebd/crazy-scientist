@@ -17,7 +17,7 @@ var jump = true
 var bullet_scene = preload("res://scene/bullet.tscn")
 
 func _ready() -> void:
-	pass
+	print("OK")
 
 
 func _physics_process(delta) -> void:

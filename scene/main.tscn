@@ -254,7 +254,7 @@ position = Vector2(524, 105)
 
 [node name="player" parent="." instance=ExtResource("3_hxt4h")]
 unique_name_in_owner = true
-position = Vector2(457, 543)
+position = Vector2(1330, 576)
 
 [node name="kill_zone" type="Area2D" parent="."]
 position = Vector2(2919, 992)
