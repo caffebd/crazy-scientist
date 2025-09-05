@@ -10,13 +10,15 @@ var on_ladder: bool
 var climbing: bool
 var direction := Vector2.ZERO
 var jump = true
+var bullet_pos := 0
+var bullet_shot = true
 
-
-@onready var sprite_2d: AnimatedSprite2D = $Sprite2D
+@onready var sprite_2d: AnimatedSprite2D = %player_anim
 
 var bullet_scene = preload("res://scene/bullet.tscn")
 
 func _ready() -> void:
+	
 	print("check")
 
 
@@ -24,15 +26,31 @@ func _physics_process(delta) -> void:
 	direction.y += gravity * delta
 	#Animation
 	if (velocity.x > 1 || velocity.x < -1):
-		sprite_2d.animation = "walk(right)"
+		if GlobalVars.big_gun == false:
+			sprite_2d.animation = "walk(right)"
+			
+		if GlobalVars.big_gun == true:
+			sprite_2d.animation = "big_gun_walk"
+			
 	else:
-		sprite_2d.animation = "idle"
+		if GlobalVars.big_gun == false:
+			sprite_2d.animation = "idle"
+			
+		if GlobalVars.big_gun == true:
+			sprite_2d.animation = "big_gun_idle"
+			
 	
 	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		sprite_2d.animation = "jump"
+		bullet_shot = false
+		if GlobalVars.big_gun == false:
+			sprite_2d.animation = "jump"
+		if GlobalVars.big_gun == true:
+			sprite_2d.animation = "jump2"
+	if is_on_floor():
+		bullet_shot = true
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -47,6 +65,7 @@ func _physics_process(delta) -> void:
 		velocity.x = direction * SPEED
 		var isLeft = velocity.x < 0 
 		sprite_2d.flip_h = isLeft
+		bullet_pos = isLeft
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -67,9 +86,13 @@ func _physics_process(delta) -> void:
 	
 func _input(evemt : InputEvent) -> void:
 	if Input.is_action_just_pressed("attack"):
-		# if can_shoot is true add animation, increse damage, player speed*2 
-		var bullet = bullet_scene.instantiate()
-		bullet.global_position = $Marker2D.global_position
-		get_parent().add_child(bullet)
-		bullet.shoot(sprite_2d.flip_h)
+		if bullet_shot == true:
+			# if can_shoot is true add animation, increse damage, player speed*2 
+			var bullet = bullet_scene.instantiate()
+			if bullet_pos <= 0:
+				bullet.global_position = %Marker2D.global_position
+			if bullet_pos > 0:
+				bullet.global_position = %Marker2D2.global_position
+			get_parent().add_child(bullet)
+			bullet.shoot(sprite_2d.flip_h)
 	
