@@ -41,4 +41,8 @@ theme_override_styles/background = SubResource("StyleBoxFlat_8u16h")
 theme_override_styles/fill = SubResource("StyleBoxFlat_b7koy")
 value = 100.0
 
+[node name="die_time" type="Timer" parent="."]
+wait_time = 0.2
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="die_time" to="." method="_on_die_time_timeout"]

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var speed = 1250
+var speed = 1300
 
 func _ready() -> void:
 	pass
