@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://b6bv20sypn4u0"]
 
 [ext_resource type="Script" uid="uid://b75ewuksogd2j" path="res://script/enemy.gd" id="1_a2b4k"]
-[ext_resource type="Texture2D" uid="uid://diay45nyh3x3a" path="res://assets/scientist.png" id="1_y8gf1"]
-[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://assets/KGBlankSpaceSolid.ttf" id="3_8u16h"]
+[ext_resource type="Texture2D" uid="uid://diay45nyh3x3a" path="res://main_assets/enemies/scientist.png" id="1_y8gf1"]
+[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://main_assets/KGBlankSpaceSolid.ttf" id="3_8u16h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwyc0"]
 size = Vector2(41, 84)

@@ -5,8 +5,11 @@ func _ready() -> void:
 	
 
 func _on_body_entered(body: Node2D) -> void:
-	body.queue_free()
+	if body.is_in_group("player"):
+		GlobalSignal.life_lose.emit()
+	
 	if body.is_in_group("bullet"):
+		body.queue_free()
 		if GlobalVars.big_gun == false:
 			%ProgressBar.value -= 5
 		if GlobalVars.big_gun == true:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://djetud6p1640n"]
+[gd_scene load_steps=27 format=3 uid="uid://djetud6p1640n"]
 
 [ext_resource type="Script" uid="uid://cky16k4e5ubsj" path="res://script/character_body_2d.gd" id="1_mcjlm"]
 [ext_resource type="Texture2D" uid="uid://cxxu7pt10kbp1" path="res://main_assets/player/idle/rifle_idle1.png" id="2_rs0n8"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://d4fk8ke0tdm2w" path="res://main_assets/player/jump/jump_with_gun1.png" id="15_7uqae"]
 [ext_resource type="Texture2D" uid="uid://8faffiho2ldd" path="res://main_assets/player/jump/jump_with_gun2.png" id="16_3v645"]
 [ext_resource type="Texture2D" uid="uid://bk14idl867fmd" path="res://main_assets/player/jump/jump_with_gun3.png" id="17_h055f"]
+[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://main_assets/KGBlankSpaceSolid.ttf" id="22_3v645"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3j5jd"]
 animations = [{
@@ -119,6 +120,12 @@ animations = [{
 radius = 42.0
 height = 110.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v645"]
+bg_color = Color(0.72549, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h055f"]
+bg_color = Color(0, 0.341176, 0, 1)
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 14
 script = ExtResource("1_mcjlm")
@@ -145,3 +152,15 @@ scale = Vector2(0.323232, 0.312146)
 shape = SubResource("CapsuleShape2D_noqt3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="my_life" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -56.0
+offset_top = -72.0
+offset_right = 56.0
+offset_bottom = -57.0
+theme_override_fonts/font = ExtResource("22_3v645")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/background = SubResource("StyleBoxFlat_3v645")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h055f")
+value = 100.0

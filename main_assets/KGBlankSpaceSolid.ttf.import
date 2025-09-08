@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://be5est05f6tdv"
-path="res://.godot/imported/KGBlankSpaceSolid.ttf-7dcda2e0ac117af62291936fdd0eea19.fontdata"
+path="res://.godot/imported/KGBlankSpaceSolid.ttf-0411a77d8422b2a5f1ec7b459f040027.fontdata"
 
 [deps]
 
-source_file="res://assets/KGBlankSpaceSolid.ttf"
-dest_files=["res://.godot/imported/KGBlankSpaceSolid.ttf-7dcda2e0ac117af62291936fdd0eea19.fontdata"]
+source_file="res://main_assets/KGBlankSpaceSolid.ttf"
+dest_files=["res://.godot/imported/KGBlankSpaceSolid.ttf-0411a77d8422b2a5f1ec7b459f040027.fontdata"]
 
 [params]
 

@@ -18,9 +18,16 @@ var bullet_shot = true
 var bullet_scene = preload("res://scene/bullet.tscn")
 
 func _ready() -> void:
-	
+	GlobalSignal.life_lose.connect(_life_lose)
 	print("check")
 
+func _life_lose():
+	%my_life.value -= 10
+	if %my_life.value == 0:
+		call_deferred("reload")
+
+func reload():
+	get_tree().reload_current_scene()
 
 func _physics_process(delta) -> void:
 	direction.y += gravity * delta
