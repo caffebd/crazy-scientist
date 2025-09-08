@@ -1,0 +1,101 @@
+[gd_scene load_steps=22 format=3 uid="uid://bbn1aa4t1nqt8"]
+
+[ext_resource type="Texture2D" uid="uid://c5ucir852wo5p" path="res://main_assets/power_up/coin/coin1.png" id="1_iij2u"]
+[ext_resource type="Script" uid="uid://o1ovyanolncp" path="res://script/coin.gd" id="1_vip83"]
+[ext_resource type="Texture2D" uid="uid://bsc7bt2wpvsrq" path="res://main_assets/power_up/coin/coin2.png" id="2_vip83"]
+[ext_resource type="Texture2D" uid="uid://dn0uhw3wvlsdn" path="res://main_assets/power_up/coin/coin3.png" id="3_osopf"]
+[ext_resource type="Texture2D" uid="uid://0lxkgf3w5sdt" path="res://main_assets/power_up/coin/coin4.png" id="4_nfidj"]
+[ext_resource type="Texture2D" uid="uid://wa55m47vc1rb" path="res://main_assets/power_up/coin/coin5.png" id="5_y1o6i"]
+[ext_resource type="Texture2D" uid="uid://7u3j1ar60ycy" path="res://main_assets/power_up/coin/coin6.png" id="6_etkx7"]
+[ext_resource type="Texture2D" uid="uid://xkywhfnjod1j" path="res://main_assets/power_up/coin/coin7.png" id="7_of6ww"]
+[ext_resource type="Texture2D" uid="uid://cbwxupjag2226" path="res://main_assets/power_up/coin/coin8.png" id="8_sdm6u"]
+[ext_resource type="Texture2D" uid="uid://b2msrcnicyqk" path="res://main_assets/power_up/coin/coin9.png" id="9_8n4ui"]
+[ext_resource type="Texture2D" uid="uid://cm2y3cm734e2h" path="res://main_assets/power_up/coin/coin10.png" id="10_lnuxq"]
+[ext_resource type="Texture2D" uid="uid://ba2yfwdoxs20v" path="res://main_assets/power_up/coin/coin11.png" id="11_xbf0q"]
+[ext_resource type="Texture2D" uid="uid://bmclywkx4yair" path="res://main_assets/power_up/coin/coin12.png" id="12_ndiko"]
+[ext_resource type="Texture2D" uid="uid://fkn8e6w315t5" path="res://main_assets/power_up/coin/coin13.png" id="13_s3326"]
+[ext_resource type="Texture2D" uid="uid://d1443it68tyds" path="res://main_assets/power_up/coin/coin14.png" id="14_n65br"]
+[ext_resource type="Texture2D" uid="uid://d0qhf4pkgkrs3" path="res://main_assets/power_up/coin/coin15.png" id="15_2q2bk"]
+[ext_resource type="Texture2D" uid="uid://cq2slkvbn864h" path="res://main_assets/power_up/coin/coin16.png" id="16_5epyk"]
+[ext_resource type="Texture2D" uid="uid://bo4hth5b03sym" path="res://main_assets/power_up/coin/coin17.png" id="17_omrh3"]
+[ext_resource type="Texture2D" uid="uid://bnnvaqicb1s0s" path="res://main_assets/power_up/coin/coin18.png" id="18_xlric"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n776h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iij2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vip83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_osopf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nfidj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_y1o6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_etkx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_of6ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sdm6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8n4ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lnuxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xbf0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ndiko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_s3326")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_n65br")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2q2bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5epyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_omrh3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_xlric")
+}],
+"loop": true,
+"name": &"animation",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iij2u"]
+radius = 20.025
+
+[node name="coin" type="Area2D" groups=["power_up"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_vip83")
+
+[node name="coin_anim" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_n776h")
+animation = &"animation"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iij2u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

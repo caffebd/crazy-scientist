@@ -13,18 +13,25 @@ var jump = true
 var bullet_pos := 0
 var bullet_shot = true
 
+var my_score = 0
+
 @onready var sprite_2d: AnimatedSprite2D = %player_anim
 
 var bullet_scene = preload("res://scene/bullet.tscn")
 
 func _ready() -> void:
 	GlobalSignal.life_lose.connect(_life_lose)
+	GlobalSignal.update_score.connect(_update_score)
 	print("check")
 
 func _life_lose():
 	%my_life.value -= 10
 	if %my_life.value == 0:
 		call_deferred("reload")
+
+func _update_score():
+	my_score += 1
+	$score_label.text = "Score : "+str(my_score)
 
 func reload():
 	get_tree().reload_current_scene()

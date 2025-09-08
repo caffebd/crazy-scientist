@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://4w54c4wvbh3s" path="res://assets/player(swat)/gun/gun.png" id="1_hc6fn"]
 [ext_resource type="Script" uid="uid://bckwon8fyw0v8" path="res://script/gun.gd" id="1_oo783"]
-[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://main_assets/KGBlankSpaceSolid.ttf" id="3_rjhr3"]
+[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://main_assets/font/KGBlankSpaceSolid.ttf" id="3_rjhr3"]
 [ext_resource type="Script" uid="uid://6uw5cgtdgyc7" path="res://script/message.gd" id="4_fkqd6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02jtf"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ddb5q3nw0bspx"]
 
 [ext_resource type="Script" uid="uid://bvplaoef4u2ro" path="res://script/node.gd" id="1_1o50e"]
-[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://main_assets/KGBlankSpaceSolid.ttf" id="2_71b7j"]
+[ext_resource type="FontFile" uid="uid://be5est05f6tdv" path="res://main_assets/font/KGBlankSpaceSolid.ttf" id="2_71b7j"]
 
 [node name="pause" type="Node"]
 script = ExtResource("1_1o50e")
