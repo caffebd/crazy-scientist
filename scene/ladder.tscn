@@ -1,25 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp4eua6yni7dp"]
+[gd_scene load_steps=4 format=3 uid="uid://pfm6ieugibhk"]
 
-[ext_resource type="Texture2D" path="res://assets/ladder.png" id="1_i84iq"]
-[ext_resource type="Script" path="res://script/ladder.gd" id="2_4v6qt"]
+[ext_resource type="Texture2D" uid="uid://4k08m772bptk" path="res://main_assets/power_up/ladder.png" id="1_0gpbx"]
+[ext_resource type="Script" uid="uid://ca4pwag4it3pn" path="res://script/ladder.gd" id="2_4v6qt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tetg"]
-size = Vector2(28, 124)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0gpbx"]
+size = Vector2(43.0074, 208.715)
 
-[node name="ladder" type="Area2D"]
-position = Vector2(345, 198)
-collision_layer = 2
+[node name="ladder" type="Area2D" groups=["power_up"]]
 script = ExtResource("2_4v6qt")
 
-[node name="Ladder" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(0.699993, -28.328)
-scale = Vector2(1.7, 2.45573)
-texture = ExtResource("1_i84iq")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -27)
-shape = SubResource("RectangleShape2D_4tetg")
+position = Vector2(17.5589, 8.12038)
+rotation = -0.293048
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0gpbx")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="ladder" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(18.5, 11.2702)
+scale = Vector2(3.96774, 3.12097)
+texture = ExtResource("1_0gpbx")
+flip_h = true
