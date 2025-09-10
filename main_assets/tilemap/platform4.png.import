@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7v7jqwfoalo5"
-path="res://.godot/imported/platform3.png-7a6a3a2726db5bf4d5d5b26b4a9ea63d.ctex"
+uid="uid://clpqtk65110jf"
+path="res://.godot/imported/platform4.png-580d19aaaef9e3070cd864051e55e68c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/game_background/platform3.png"
-dest_files=["res://.godot/imported/platform3.png-7a6a3a2726db5bf4d5d5b26b4a9ea63d.ctex"]
+source_file="res://main_assets/tilemap/platform4.png"
+dest_files=["res://.godot/imported/platform4.png-580d19aaaef9e3070cd864051e55e68c.ctex"]
 
 [params]
 
